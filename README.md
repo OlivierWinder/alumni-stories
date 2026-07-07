@@ -13,7 +13,7 @@ Open the URL shown in the terminal (usually http://localhost:5173).
 
 ## Flow
 
-1. **Home** — Pick Rafaela or Jordan Okafor
+1. **Home** — Pick Rafaela 
 2. **Story** — Tap through comic panels (images + video)
 3. **Reflection** — Answer prompts at key moments
 4. **Summary** — Review your choices; note about the full live experience
