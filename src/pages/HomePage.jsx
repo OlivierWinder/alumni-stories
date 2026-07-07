@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { alumniStories, PROGRAMS } from '../data/alumni'
+import { assetUrl } from '../utils/assetUrl'
 
 const SORT_OPTIONS = [
   { value: 'date-desc', label: 'Date (newest)' },
@@ -34,7 +35,7 @@ function sortStories(stories, sortBy) {
 function AlumniCard({ alumni }) {
   const content = (
     <>
-      <img src={alumni.portrait} alt="" className="home-grid__image" />
+      <img src={assetUrl(alumni.portrait)} alt="" className="home-grid__image" />
       <div className="home-grid__overlay">
         <p className="home-grid__meta">
           {alumni.experienceYear} · {alumni.program}
@@ -76,7 +77,7 @@ export default function HomePage() {
     <div className="home-page">
       <header className="home-header">
         <img
-          src="/images/recess-logo.png"
+            src={assetUrl('/images/recess-logo.png')}
           alt="Recess College"
           className="home-header__logo"
         />

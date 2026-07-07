@@ -8,6 +8,7 @@ import ReflectionScreen from '../components/ReflectionScreen'
 import StorySummary from '../components/StorySummary'
 import StoryViewer from '../components/StoryViewer'
 import { getAlumniById } from '../data/alumni'
+import { assetUrl } from '../utils/assetUrl'
 
 function isSceneStory(alumni) {
   return alumni.storyFormat === 'scenes' && alumni.scenes?.length
@@ -210,10 +211,14 @@ export default function StoryPage() {
     ? {
         id: currentStep.id,
         type: 'video',
-        src: currentStep.src,
+        src: assetUrl(currentStep.src),
         caption: currentStep.label || '',
       }
-    : currentStep
+    : {
+        ...currentStep,
+        src: assetUrl(currentStep.src),
+        poster: currentStep.poster ? assetUrl(currentStep.poster) : undefined,
+      }
 
   return (
     <StoryViewer
